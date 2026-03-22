@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* ปรับหัวข้อให้นุ่มนวลขึ้น */
+    h2 {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    /* จัดให้เนื้อหาในตารางอยู่กึ่งกลางแนวตั้งและแนวนอน */
+    .table th, .table td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    /* ถ้าอยากให้ "ชื่อประชากร" ชิดซ้ายเหมือนเดิม (แนะนำ) ให้ใช้คลาสนี้ */
+    .text-left {
+        text-align: left !important;
+        padding-left: 20px;
+    }
+
+    .btn-pink {
+        background-color: #ff69b4;
+        color: white !important;
+        border: none;
+        width: 80px;
+    }
+    .btn-pink:hover { background-color: #ff1493; }
+
+    .btn-orange {
+        background-color: #ff8c00;
+        color: white !important;
+        border: none;
+        width: 80px;
+    }
+    .btn-orange:hover { background-color: #e67e00; }
+</style>
+
+<h2 style="color: blueviolet;">ยินดีต้อนรับสู่รายชื่อประชากร</h2>
+
+<div class="card shadow-sm"> <div class="card-body p-0"> <table class="table table-hover mb-0">
+            <thead class="table-light"> <tr>
+                    <th scope="col" width="15%">รหัสประชากร</th>
+                    <th scope="col" class="text-left">ชื่อประชากร</th>
+                    <th scope="col">อายุ</th>
+                    <th scope="col">แก้ไข</th>
+                    <th scope="col">ลบ</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for person in all_person %}
+                <tr>
+                    <th scope="row">{{ person.id }}</th>
+                    <td class="text-left">{{ person.name }}</td>
+                    <td>{{ person.age }} ปี</td>
+                    <td><a href="#" class="btn btn-pink btn-sm">แก้ไข</a></td>
+                    <td><a href="#" class="btn btn-orange btn-sm">ลบ</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="py-4 text-muted">ยังไม่มีข้อมูลประชากรในระบบ</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

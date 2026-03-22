@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="row align-items-center py-5">
+    <div class="col-md-6 text-center">
+        {# TODO: อย่าลืมเปลี่ยน path รูปภาพในเครื่องคุณตรง src นะครับ #}
+        <img src="https://a.storyblok.com/f/178900/2000x3000/2e0e983335/rezero_s4_baseasset_teaser_2x3_2000x3000_copyright_en-us-1.jpg/m/filters:quality(95)format(webp)" class="img-fluid rounded-4 shadow" alt="About Image">
+        <p class="text-muted mt-2"><i></i></p>
+    </div>
+
+    <div class="col-md-6">
+        <h2 class="display-5 fw-bold text-primary mb-4">ยินดีต้อนรับสู่ระบบประชากร</h2>
+        <p class="lead text-secondary">
+            เว็บไซต์นี้พัฒนาขึ้นเพื่อจัดการและบันทึกข้อมูลประชากรอย่างเป็นระบบ 
+            รองรับการเพิ่มข้อมูล การแสดงผล และการจัดการฐานข้อมูลอย่างง่าย
+        </p>
+        <hr class="my-4">
+        <div class="d-flex align-items-center mb-3">
+            <div class="bg-primary text-white rounded-circle p-2 me-3" style="width: 40px; height: 40px; text-align: center;">1</div>
+            <span>บันทึกข้อมูลได้รวดเร็ว</span>
+        </div>
+        <div class="d-flex align-items-center">
+            <div class="bg-success text-white rounded-circle p-2 me-3" style="width: 40px; height: 40px; text-align: center;">2</div>
+            <span>แสดงผลแบบ Real-time</span>
+        </div>
+        
+        <div class="mt-5">
+            <a href="{% url 'form' %}" class="btn btn-primary btn-lg px-4">เริ่มใช้งานเลย</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
